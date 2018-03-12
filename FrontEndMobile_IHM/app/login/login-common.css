@@ -1,0 +1,33 @@
+*{
+  font-family: Roboto
+}
+
+StackLayout {
+    padding-bottom: 15;
+    background-color: white;
+  }
+
+  Image {
+    margin-top: 116px;
+    margin-bottom: 86px;
+  }
+
+  Button,TextField {
+    margin-left: 32;
+    margin-right: 32;
+    margin-top: 10;
+  }
+
+  .submit-button {
+    background-color: #F64060;
+    border-radius: 54px;
+    color: white;
+    margin-top: 20;
+  }
+
+
+  .label-login{
+    margin-top: 10;
+    color: #F64060;
+    text-align: center
+  }

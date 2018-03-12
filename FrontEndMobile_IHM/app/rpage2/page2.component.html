@@ -1,0 +1,19 @@
+<StackLayout>
+
+    <Image src="res://login_logo" stretch="none" horizontalAlignment="center"></Image>
+                    
+    <TextField hint="Adresse"  [(ngModel)]="user.address"></TextField>
+    
+    <TextField hint="Numero Telephone"  [(ngModel)]="user.phone"></TextField>
+    
+    <TextField hint="Fonction"  [(ngModel)]="user.job"></TextField>
+    
+    <Button class="profile-button" text="Photo de profil" (tap)="takePic()"></Button>
+    
+    <Image [src]="picture" width="200" height="200"></Image>
+    
+    <Button class="conf-button " text="Confirmer" (tap)="register()" class="submit-button"></Button>
+    
+    <Label class="label-register" (tap)="goBack()" text="Vous possédez un compte? Se conntecter ici."></Label>
+
+</StackLayout>
