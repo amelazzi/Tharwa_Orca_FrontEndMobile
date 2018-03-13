@@ -1,7 +1,8 @@
 <StackLayout>
+<Image src="res://login_logo" stretch="none" horizontalAlignment="center"></Image>
+<ScrollView orientation="vertical" >
+<StackLayout>
 
-    <Image src="res://login_logo" stretch="none" horizontalAlignment="center"></Image>
-                    
     <TextField hint="Adresse"  [(ngModel)]="user.address"></TextField>
     
     <TextField hint="Numero Telephone"  [(ngModel)]="user.phone"></TextField>
@@ -12,8 +13,10 @@
     
     <Image [src]="picture" width="200" height="200"></Image>
     
-    <Button class="conf-button " text="Confirmer" (tap)="register()" class="submit-button"></Button>
+    <Button class="conf-button" text="Confirmer" (tap)="register()"></Button>
     
-    <Label class="label-register" (tap)="goBack()" text="Vous possédez un compte? Se conntecter ici."></Label>
+    <Label class="label-register" (tap)="goBack()" text="Page précédente"></Label>
 
+</StackLayout>
+</ScrollView>
 </StackLayout>

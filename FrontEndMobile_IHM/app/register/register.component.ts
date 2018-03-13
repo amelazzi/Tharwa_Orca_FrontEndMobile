@@ -21,11 +21,12 @@ import { Page2Component } from "../rpage2/page2.component";
 })
 export class RegisterComponent implements OnInit{
    public user: User;
+   public 
   ngOnInit() {
     this.page.actionBarHidden = true;
   }
   public static us : User;
-    public constructor(private location: Location,private router: Router, private userService: UserService) {
+    public constructor(private location: Location,private router: Router, private userService: UserService,private page: Page) {
      this.user = new User(1);
     }
     public getUser()

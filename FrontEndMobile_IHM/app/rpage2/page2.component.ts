@@ -21,6 +21,7 @@ export class Page2Component implements OnInit{
      usedId: number= 0;
      picture: any;
 ngOnInit(){   
+    this.page.actionBarHidden = true;
     this.picture = "https://placehold.it/100x100";
     this.user = new User(0);
     this.route.queryParams.subscribe(params =>{
@@ -29,12 +30,6 @@ ngOnInit(){
     this.user.email = params["email"],
     this.user.password = params["password"]
         });
-    console.log(JSON.stringify(
-        {
-        type : 'LOG_TO_CONSOLE',
-        payload : this.user.firstname,
-        }
-    ));
 }
 
     public constructor(private location: Location,private router: Router, private userService: UserService
