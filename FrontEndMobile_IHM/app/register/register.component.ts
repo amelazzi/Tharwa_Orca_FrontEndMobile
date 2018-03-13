@@ -6,6 +6,7 @@ import { User } from "../shared/user/user";
 import { UserService } from "../shared/user/user.service";
 import { Router , NavigationExtras } from "@angular/router";
 import * as camera from "nativescript-camera";
+import {Page} from "ui/page";
 import { Page2Component } from "../rpage2/page2.component";
 
 
@@ -21,7 +22,7 @@ import { Page2Component } from "../rpage2/page2.component";
 export class RegisterComponent implements OnInit{
    public user: User;
   ngOnInit() {
-  
+    this.page.actionBarHidden = true;
   }
   public static us : User;
     public constructor(private location: Location,private router: Router, private userService: UserService) {
