@@ -1,4 +1,4 @@
-@import '~nativescript-theme-core/css/ruby.css';
+
 *{
   font-family: Roboto
 }
@@ -13,12 +13,16 @@ StackLayout {
     margin-bottom: 86px;
   }
 
-  Button,TextField {
+  Button {
     margin-left: 32;
     margin-right: 32;
     margin-top: 10;
   }
-
+  TextField {
+    margin-left: 32;
+    margin-right: 32;
+    margin-top: 10;
+  }
   .submit-button {
     background-color: #F64060;
     border-radius: 54px;
