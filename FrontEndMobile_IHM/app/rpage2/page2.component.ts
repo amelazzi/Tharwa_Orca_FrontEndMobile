@@ -22,7 +22,7 @@ export class Page2Component implements OnInit{
      picture: any;
 ngOnInit(){   
     this.page.actionBarHidden = true;
-    this.picture = "https://placehold.it/100x100";
+    //this.picture = "https://placehold.it/100x100";
     this.user = new User(0);
     this.route.queryParams.subscribe(params =>{
     this.user.firstname = params["firstname"], 
