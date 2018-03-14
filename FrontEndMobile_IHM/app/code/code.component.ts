@@ -3,7 +3,7 @@ import { Router , ActivatedRoute, NavigationExtras} from "@angular/router";
 import { NgClass } from "@angular/common";
 import { UserService } from "../shared/user/user.service";
 import {User} from "../shared/user/User";
-
+import {Page} from "ui/page";
 @Component
 ({
     selector: "code",
@@ -26,9 +26,7 @@ export class CodeComponent implements OnInit{
      refresh_token;
       ngOnInit()
       {
-          /// Sending the code
-      
-         // this.myCode = (Math.abs((10000*Math.random()))).toString() ; 
+          this.page.actionBarHidden= true;
           this.route.queryParams.subscribe(params =>{
             this.tel= params["phone"],
             this.mail = params["mail"],
@@ -45,7 +43,7 @@ export class CodeComponent implements OnInit{
 
       }
       public myCode : string;
-      public constructor(private router:Router,private route:ActivatedRoute,private userService: UserService)
+      public constructor(private router:Router,private route:ActivatedRoute,private userService: UserService,private page: Page)
       {  
           
        

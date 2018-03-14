@@ -2,6 +2,10 @@
 *{
   font-family: Roboto
 }
+.page {
+  align-items: center;
+  flex-direction: column;
+}
 
 StackLayout {
     padding-bottom: 15;

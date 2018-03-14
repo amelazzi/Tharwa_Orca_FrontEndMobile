@@ -5,7 +5,7 @@ import { UserService } from "../shared/user/user.service";
 import { SnackBar } from "nativescript-snackbar";
 import {Page} from "ui/page";
 import { TNSCheckBoxModule } from 'nativescript-checkbox/angular';
- 
+import * as dialogs from "ui/dialogs";
 
 @Component  ({
   selector: "login",
@@ -17,13 +17,14 @@ export class LoginComponent implements OnInit {
   public user: User;
   isLoggingIn = true;
   viaSMS = true;
+  choice : string ="";
   viaMail = false;
   public myCode;
   public access_token;
   public refresh_token;
   constructor(private router: Router, private userService: UserService,private page: Page) {
     this.user = new User(0);
-  
+    this.choice = "";
   }
   ngOnInit()
   {
@@ -33,8 +34,22 @@ export class LoginComponent implements OnInit {
     this.user.password="orca@2018";
   }
   submit() {
-   
-   this.userService.authentifier(this.user)
+    dialogs.action({
+      title : "Confirmation",
+      message: "Veuillez Choisir l'option pour recevoir un code pour confirmer votre authentification ",
+      cancelButtonText: "ANNULER",
+      actions: ["Email", "SMS"]
+  }).then(result => {
+      console.log("Dialog result: " + result);
+      if(result == "Email"){
+          this.choice="0";
+      }else if(result == "SMS"){
+        this.choice= "1";
+      }
+  });
+  if(this.choice != "")
+  {
+   this.userService.authentifier(this.user,this.choice)
       .map(response => 
         {
          response = response.json();
@@ -55,7 +70,8 @@ export class LoginComponent implements OnInit {
         
         (res) =>
          {
-          console.log(res);
+          //console.log(res);
+          
           let navigationExtras : NavigationExtras = {
             queryParams: {
                 "phone":this.user.phone,
@@ -69,6 +85,7 @@ export class LoginComponent implements OnInit {
        
         (error) => alert("something went wrong")
       );
+    }
       //this.router.navigate(["/home"]);
   }
   public register()

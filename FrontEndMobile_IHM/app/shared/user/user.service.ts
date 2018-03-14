@@ -19,7 +19,7 @@ ngOnInit()
 
 }
 constructor(private http: Http) {}
-authentifier(user :User)
+authentifier(user :User,code:string)
 {
   var headers = new Headers();
   
@@ -27,7 +27,7 @@ authentifier(user :User)
   headers.append("Content-Type", "application/x-www-form-urlencoded");
   //headers.append("Authorization","Basic Y2xpZW50bW9iaWxlOm9yY2FAMjAxOA==");    
 
-  const body="userId="+user.email+"&Pwd="+user.password+"&code=0"
+  const body="userId="+user.email+"&Pwd="+user.password+"&code="+code;
 
   return this.http.post('http://auththarwa.cleverapps.io/oauth/code',body, {headers: headers})
   .catch(this.handleErrors);

@@ -1,7 +1,8 @@
 // Import the theme’s variables. If you’re using a color scheme
 // other than “light”, switch the path to the alternative scheme,
 // for example '~nativescript-theme-core/scss/dark'.
-@import '~nativescript-theme-core/scss/light';
+//@import '~nativescript-theme-core/scss/dark';
+@import '~nativescript-theme-core/scss/ruby';
 
 // Custom colors
 $background-dark: #F8F8F8 !default;
@@ -15,10 +16,11 @@ $blue-10: rgba($blue-dark, 0.1) !default;
 
 $accent-dark: #3A53FF !default;
 $accent-light: #4781FE !default;
-$accent-ruby :#D84039;
+$accent-ruby :#D84039 !default;
 
 $success-dark: #06CE6A !default;
 $success-light: #00E676 !default;
+$success-ruby : #00E676 !default;
 
 $warning-dark: #f39c11 !default;
 $warning-light: #F2C112 !default;
