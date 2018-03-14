@@ -1,10 +1,13 @@
 
-
-
-<StackLayout>
-    <Image src="res://logo_login" stretch="none" horizontalAlignment="center"></Image>
-  
-    <TextField hint="Code" secure="true" [(ngModel)]="entered"></TextField>
-    <Button text="Confirmer" class="submit-button" (tap)="confirm()"></Button>
-    
-</StackLayout>
+<FlexboxLayout class="page">
+    <StackLayout>
+        <Image src="res://login_logo" stretch="none" horizontalAlignment="center"></Image>
+      
+        
+        <TextField hint="Password" secure="true" [(ngModel)]="entered"></TextField>
+        <Button text="Confirmer" class="submit-button" (tap)="confirm()"></Button>
+        
+        <label class="label-login" text="Revenir en arriére"  (tap)="goBack()"></label>
+        
+    </StackLayout>
+    </FlexboxLayout>

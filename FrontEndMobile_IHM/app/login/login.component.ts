@@ -16,7 +16,7 @@ import * as dialogs from "ui/dialogs";
 export class LoginComponent implements OnInit {
   public user: User;
   isLoggingIn = true;
-  viaSMS = true;
+  viaSMS = false;
   choice : string ="";
   viaMail = false;
   public myCode;
@@ -40,15 +40,22 @@ export class LoginComponent implements OnInit {
       cancelButtonText: "ANNULER",
       actions: ["Email", "SMS"]
   }).then(result => {
-      console.log("Dialog result: " + result);
       if(result == "Email"){
           this.choice="0";
+          this.viaMail = true;
+          this.toNextPage();
       }else if(result == "SMS"){
         this.choice= "1";
+        this.viaSMS= true;
+        this.toNextPage();
       }
   });
-  if(this.choice != "")
-  {
+
+}
+public toNextPage()
+{
+  if(this.viaMail ||this.viaSMS)
+{
    this.userService.authentifier(this.user,this.choice)
       .map(response => 
         {
@@ -85,9 +92,10 @@ export class LoginComponent implements OnInit {
        
         (error) => alert("something went wrong")
       );
-    }
+    
       //this.router.navigate(["/home"]);
   }
+}
   public register()
   {
       this.router.navigate(["/register"]);

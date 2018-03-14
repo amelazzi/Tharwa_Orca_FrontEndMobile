@@ -23,13 +23,13 @@ authentifier(user :User,code:string)
 {
   var headers = new Headers();
   
-
+ 
   headers.append("Content-Type", "application/x-www-form-urlencoded");
   //headers.append("Authorization","Basic Y2xpZW50bW9iaWxlOm9yY2FAMjAxOA==");    
 
   const body="userId="+user.email+"&Pwd="+user.password+"&code="+code;
 
-  return this.http.post('http://auththarwa.cleverapps.io/oauth/code',body, {headers: headers})
+  return this.http.post('https://auththarwa.cleverapps.io/oauth/code',body, {headers: headers})
   .catch(this.handleErrors);
 }
 sendCode(username :string ,code: string)
@@ -42,7 +42,7 @@ sendCode(username :string ,code: string)
 
   const body="grant_type=password&username="+username+"&password="+code
 
-  return this.http.post('http://auththarwa.cleverapps.io/oauth/login',body, {headers: headers})
+  return this.http.post('https://auththarwa.cleverapps.io/oauth/login',body, {headers: headers})
   .catch(this.handleErrors);
 }
 refreshLogin(refresh_token)
@@ -54,7 +54,7 @@ refreshLogin(refresh_token)
 
   const body="grant_type=refresh_token&refresh_token="+refresh_token
 
-  return this.http.post('http://auththarwa.cleverapps.io/oauth/refresh',body, {headers: headers})
+  return this.http.post('https://auththarwa.cleverapps.io/oauth/refresh',body, {headers: headers})
   .catch(this.handleErrors);
 }
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router , ActivatedRoute, NavigationExtras} from "@angular/router";
 import { NgClass } from "@angular/common";
 import { UserService } from "../shared/user/user.service";
+import { Location } from "@angular/common";
 import {User} from "../shared/user/User";
 import {Page} from "ui/page";
 @Component
@@ -24,6 +25,9 @@ export class CodeComponent implements OnInit{
      public expires;
      access_token;
      refresh_token;
+     public goBack() {
+      this.location.back();
+  }
       ngOnInit()
       {
           this.page.actionBarHidden= true;
@@ -43,7 +47,7 @@ export class CodeComponent implements OnInit{
 
       }
       public myCode : string;
-      public constructor(private router:Router,private route:ActivatedRoute,private userService: UserService,private page: Page)
+      public constructor(private location:Location,private router:Router,private route:ActivatedRoute,private userService: UserService,private page: Page)
       {  
           
        
