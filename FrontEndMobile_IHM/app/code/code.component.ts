@@ -30,7 +30,7 @@ export class CodeComponent implements OnInit{
   }
       ngOnInit()
       {
-          this.page.actionBarHidden= true;
+          this.page.actionBarHidden= false;
           this.route.queryParams.subscribe(params =>{
             this.tel= params["phone"],
             this.mail = params["mail"],
@@ -87,11 +87,5 @@ export class CodeComponent implements OnInit{
            
             (error) => alert("something went wrong")
           );
-
-    
-         
-      
-
       }
-  
   }

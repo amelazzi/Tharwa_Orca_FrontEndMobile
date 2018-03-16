@@ -21,15 +21,15 @@ import { CodeComponent } from "./code/code.component";
 ];*/
 
 export const routes = [
-    { path: "home", component: LoginComponent },
+    { path: "code", component: LoginComponent },
     { path: "register", component: RegisterComponent},
     {path : "page2", component: Page2Component},
-    {path: "code", component: CodeComponent},
-    {path: "", loadChildren: "./home/home.module#HomeModule" },
+    {path: "", component: CodeComponent},
+    {path: "home", loadChildren: "./home/home.module#HomeModule" },
     {path: "browse", loadChildren: "./browse/browse.module#BrowseModule" },
     {path: "search", loadChildren: "./search/search.module#SearchModule" },
     {path: "featured", loadChildren: "./featured/featured.module#FeaturedModule" },
-    {path: "settings", loadChildren: "./settings/settings.module#SettingsModule" }
+    {path: "settings", loadChildren: "./settings/settings.module#SettingsModule" },
 ];
 
 export const navigatableComponents = [
