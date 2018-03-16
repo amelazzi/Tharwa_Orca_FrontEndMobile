@@ -6,19 +6,25 @@ import { User } from "../shared/user/user";
 import { Router , ActivatedRoute, NavigationExtras} from "@angular/router";
 import { InfoService } from "../shared/info/info.service";
 import { Info } from "../shared/info/info";
+import { TabView, SelectedIndexChangedEventData } from "ui/tab-view";
+
+import { registerElement } from "nativescript-angular/element-registry";
+registerElement("Fab", () => require("nativescript-floatingactionbutton").Fab);
 
 @Component({
     selector: "Home",
     moduleId: module.id,
-    providers : [UserService,InfoService],
-    templateUrl: "./home.component.html"
+    providers : [UserService, InfoService],
+    templateUrl: "./home.component.html",
+    styleUrls: ["./home.css"]
 })
 export class HomeComponent implements OnInit {
+
     refresh_token;
     access_token;
     expires;
     user: User;
-    info : Info;
+    info: Info;
     /* ***********************************************************
     * Use the @ViewChild decorator to get a reference to the drawer component.
     * It is used in the "onDrawerButtonTap" function below to manipulate the drawer.

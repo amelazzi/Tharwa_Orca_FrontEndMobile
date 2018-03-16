@@ -1,15 +1,9 @@
-<ActionBar class="action-bar">
-    <!-- 
-    Use the NavigationButton as a side-drawer button in Android because ActionItems are shown on the right side of the ActionBar
-    -->
-    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
-    <!-- 
-    Use the ActionItem for IOS with position set to left. Using the NavigationButton as a side-drawer button in iOS is not possible, because its function is to always navigate back in the application.
-    -->
-    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
-        ios.position="left">
-    </ActionItem>
-    <Label class="action-bar-title" text="Home"></Label>
+<ActionBar title="Accueil" class="ActionBarTitle">
+    
+    <NavigationButton text="Go Back" icon="res://ic_navbar"></NavigationButton>
+    <ActionItem ios.systemIcon="2" icon="res://ic_notifications" ios.position="right"></ActionItem>
+    <ActionItem ios.systemIcon="3" icon="res://ic_account" ios.position="right"></ActionItem>
+
 </ActionBar>
 
 <!--
@@ -31,7 +25,56 @@ it shouldn't have any other siblings other than the <ActionBar> component.
     Use the tkMainContent directive to display the content of the page when you have an app drawer.
     -->
     <GridLayout class="page page-content" tkMainContent>
-        <Label class="page-icon fa" text="&#xf015;"></Label>
-        <Label class="page-placeholder" text="<!-- Page content goes here -->"></Label>
+        <TabView selectedIndex="1">
+            <StackLayout *tabItem="{title:'Euro €'}">
+                <Label text="Compte Devise Euro" class="TabLabel"></Label>
+                <StackLayout orientation="vertical" class="card" style="background-color: #4ED1ED">
+                    <Label text="Balance Totale" class="cardTitle"></Label>
+                    <Label text="19834,00 €" class="cardTotal"></Label>
+                    <Label text="Taux De Change" class="cardTitle"></Label>
+                    <Label text="1€ = 140,40 DZD" class="tauxDeChange"></Label>
+                    <Button class="card-button" text="Effectuer Virement"></Button>
+                    <Button class="card-button" text="Historique"></Button>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout *tabItem="{title:'DZD'}">
+                    <Label text="Compte Courant" class="TabLabel"></Label>
+                    <StackLayout orientation="vertical" class="card" style="background-color: #20364D">
+                        <Label text="Balance Totale" class="cardTitle"></Label>
+                        <Label text="19834 DZD" class="cardTotal"></Label>
+                        <Label text="" class="cardTitle"></Label>
+                        <Label text="" class="tauxDeChange"></Label>
+                        <Button class="card-button" text="Effectuer Virement"></Button>
+                        <Button class="card-button" text="Historique"></Button>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout *tabItem="{title:'DZD'}">
+                        <Label text="Compte Epargne" class="TabLabel"></Label>
+                        <StackLayout orientation="vertical" class="card" style="background-color: #004346">
+                            <Label text="Balance Totale" class="cardTitle"></Label>
+                            <Label text="19834 DZD" class="cardTotal"></Label>
+                            <Label text="" class="cardTitle"></Label>
+                            <Label text="" class="tauxDeChange"></Label>
+                            <Button class="card-button" text="Effectuer Virement"></Button>
+                            <Button class="card-button" text="Historique"></Button>
+                        </StackLayout>
+                    </StackLayout>
+                     <StackLayout *tabItem="{title:'Dollar $'}">
+                <Label text="Compte Devise Dollar" class="TabLabel"></Label>
+                <StackLayout orientation="vertical" class="card" style="background-color: #0DD9A3">
+                    <Label text="Balance Totale" class="cardTitle"></Label>
+                    <Label text="19834 $" class="cardTotal"></Label>
+                    <Label text="Taux De Change" class="cardTitle"></Label>
+                    <Label text="1$ = 140,40 DZD" class="tauxDeChange"></Label>
+                    <Button class="card-button" text="Effectuer Virement"></Button>
+                    <Button class="card-button" text="Historique"></Button>
+                </StackLayout>
+            </StackLayout>
+            
+        </TabView>  
+        <StackLayout>
+                <FAB (tap)="fabTap()" icon="res://ic_add_white" rippleColor="#f1f1f1" class="fab-button"></FAB>
+        </StackLayout>
     </GridLayout>
 </RadSideDrawer>
+

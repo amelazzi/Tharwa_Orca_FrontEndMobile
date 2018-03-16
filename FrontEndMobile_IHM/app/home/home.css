@@ -1,0 +1,74 @@
+ActionBar{
+    background-color: #F64060
+}
+
+.ActionBarTitle{
+    color: white;
+    font-family: Medium;
+    font-size: 20pt;
+}
+
+.TabTitle{
+    color: #FAE6E9;
+}
+
+.TabLabel{
+    color: #F64060;
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    font-size: 20pt;
+}
+
+.card{
+    border-radius: 24px;
+    width: 75%;
+    height: 75%;
+}
+
+.cardTitle{
+    margin-top: 32px;
+    margin-left: 32px;
+    color: white;
+    font-size: 20pt;
+}
+
+.cardTotal{
+    margin-left: 32px;
+    color: white;
+    font-size: 38pt;
+    margin-bottom: 16px
+}
+
+.tauxDeChange{
+    margin-left: 32px;
+    color: white;
+    font-size: 28pt;
+    margin-bottom: 72px;
+}
+
+.card-button {
+    background-color:transparent;
+    border-color: white;
+    border-radius: 54px;
+    border-style: solid;
+    border-width: 5px;
+    color: white;
+    width: 85%;
+    margin-top: 32px;
+  }
+
+TabView{
+
+    tab-text-color: #C13A4D;
+    selected-tab-text-color: #F64060;
+}
+
+.fab-button {
+    height: 70;
+    width: 70;
+    margin: 15;
+    background-color: #F64060; 
+    horizontal-align: right;
+    margin-top: 932px;
+}
