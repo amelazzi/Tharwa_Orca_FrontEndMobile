@@ -25,7 +25,7 @@ import { HistoriqueComponent } from "./historique/historique.component";
 
 export const routes = [
 
-    {path: "", redirectTo: "profile", pathMatch: "full" },
+    {path: "", redirectTo: "historique", pathMatch: "full" },
     {path: "register", component: RegisterComponent},
     {path : "page2", component: Page2Component},
     {path: "code", component: CodeComponent},

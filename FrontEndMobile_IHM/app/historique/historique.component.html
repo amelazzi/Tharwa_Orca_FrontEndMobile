@@ -13,8 +13,8 @@
         <MyDrawer [selectedPage]="'Historique'"></MyDrawer>
     </StackLayout>
 
-    <GridLayout>
-        <ListView [items]="students">
+    <GridLayout class="page page-content" tkMainContent>
+        <ListView [items]="virements">
             <ng-template let-item="item">
                 <StackLayout orientation="horizontal" class="list-item">
                     <Image src="res://ic_avatar" stretch="none" horizontalAlignment="center"></Image>
