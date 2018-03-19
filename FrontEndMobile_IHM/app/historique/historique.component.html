@@ -5,8 +5,14 @@
     <ActionItem ios.systemIcon="3" icon="res://ic_account" ios.position="right"></ActionItem>
 
 </ActionBar>
+<RadSideDrawer #drawer showOverNavigation="true" [drawerTransition]="sideDrawerTransition">
+    <!--
+    Use the tkDrawerContent directive to display the content of the app drawer on this page.
+    -->
+    <StackLayout tkDrawerContent>
+        <MyDrawer [selectedPage]="'Historique'"></MyDrawer>
+    </StackLayout>
 
-<StackLayout>
     <GridLayout>
         <ListView [items]="students">
             <ng-template let-item="item">
@@ -28,5 +34,5 @@
             </ng-template>
         </ListView>
     </GridLayout>
-</StackLayout>
-"res://login_logo"s
+
+</RadSideDrawer>
