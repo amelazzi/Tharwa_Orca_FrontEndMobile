@@ -8,8 +8,8 @@ import { InfoService } from "../shared/info/info.service";
 import { Info } from "../shared/info/info";
 import { TabView, SelectedIndexChangedEventData } from "ui/tab-view";
 
-import { registerElement } from "nativescript-angular/element-registry";
-registerElement("Fab", () => require("nativescript-floatingactionbutton").Fab);
+//import { registerElement } from "nativescript-angular/element-registry";
+//registerElement("Fab", () => require("nativescript-floatingactionbutton").Fab);
 
 @Component({
     selector: "Home",
@@ -99,7 +99,7 @@ export class HomeComponent implements OnInit {
         
        },
        
-        (error) => this.router.navigate(["/login"])
+        //(error) => this.router.navigate(["/login"])
       );
     }
     public constructor(private router:Router,private route:ActivatedRoute,private userService: UserService,private infoService: InfoService)
@@ -118,5 +118,9 @@ export class HomeComponent implements OnInit {
     *************************************************************/
     onDrawerButtonTap(): void {
         this.drawerComponent.sideDrawer.showDrawer();
+    }
+    fabTap()
+    {
+        
     }
 }
