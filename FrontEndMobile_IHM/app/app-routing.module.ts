@@ -6,6 +6,8 @@ import { RegisterComponent } from "./register/register.component";
 import { Page2Component } from "./rpage2/page2.component";
 import { CodeComponent } from "./code/code.component";
 import { ProfileComponent } from "./profile/profile.component";
+import { HistoriqueComponent } from "./historique/historique.component";
+
 
 /*export const routes: Routes = [
     {path: "", redirectTo: "login", pathMatch: "full" },
@@ -22,17 +24,18 @@ import { ProfileComponent } from "./profile/profile.component";
 ];*/
 
 export const routes = [
-    {path: "login", component: LoginComponent },
+
     {path: "", redirectTo: "profile", pathMatch: "full" },
     {path: "register", component: RegisterComponent},
     {path : "page2", component: Page2Component},
     {path: "code", component: CodeComponent},
     {path: "home", loadChildren: "./home/home.module#HomeModule" },
     {path: "profile", loadChildren: "./profile/profile.module#ProfileModule" },
+    {path: "historique",loadChildren: "./historique/historique.module#HistoriqueModule" },
     {path: "browse", loadChildren: "./browse/browse.module#BrowseModule" },
     {path: "search", loadChildren: "./search/search.module#SearchModule" },
     {path: "featured", loadChildren: "./featured/featured.module#FeaturedModule" },
-    {path: "settings", loadChildren: "./settings/settings.module#SettingsModule" },
+    {path: "settings", loadChildren: "./settings/settings.module#SettingsModule" }
 ];
 
 export const navigatableComponents = [

@@ -1,0 +1,32 @@
+<ActionBar title="Historique" class="ActionBarTitle">
+    
+    <NavigationButton text="Go Back" icon="res://ic_arrow_back"></NavigationButton>
+    <ActionItem ios.systemIcon="2" icon="res://ic_notifications" ios.position="right"></ActionItem>
+    <ActionItem ios.systemIcon="3" icon="res://ic_account" ios.position="right"></ActionItem>
+
+</ActionBar>
+
+<StackLayout>
+    <GridLayout>
+        <ListView [items]="students">
+            <ng-template let-item="item">
+                <StackLayout orientation="horizontal" class="list-item">
+                    <Image src="res://ic_avatar" stretch="none" horizontalAlignment="center"></Image>
+                    <StackLayout orientation="vertical">
+                        <Label [text] = "item" class="list-label"></Label>
+                        <StackLayout orientation="horizontal" class="list-cost" >
+                            <Label [text] = "item"></Label>
+                        </StackLayout>
+                        <Label [text] = "item" class="list-cost"></Label>
+                    </StackLayout>
+                    <StackLayout orientation="vertical" class="list-date">
+                        <Label class="list-label"></Label>
+                        <Label [text] = "item"></Label>
+                        <Label [text] = "item"></Label>
+                    </StackLayout>
+                </StackLayout>
+            </ng-template>
+        </ListView>
+    </GridLayout>
+</StackLayout>
+"res://login_logo"s

@@ -5,9 +5,13 @@
     <TextField hint="Email Address" keyboardType="email" [(ngModel)]="user.email"
       autocorrect="false" autocapitalizationType="none"></TextField>
     <TextField hint="Password" secure="true" [(ngModel)]="user.password"></TextField>
+    
     <Button text="Se connecter" class="submit-button" (tap)="submit()"></Button>
     
     <label class="label-login" text="Créer un compte"  (tap)="register()"></label>
-    
+
 </StackLayout>
+
+    <Image src="res://footer" stretch="none" horizontalAlignment="center" class="footer"></Image>
+
 </FlexboxLayout>
