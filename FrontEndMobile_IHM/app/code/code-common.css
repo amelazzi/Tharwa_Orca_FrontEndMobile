@@ -30,7 +30,8 @@ Button {
    font-family: Medium;
    font-size: 14pt;
    margin-top: 32px;
-   width: 75%;
+   width: 78%;
+   color: black;
  }
 
  .confirm-button { 
@@ -42,7 +43,7 @@ Button {
 }
 
  .confirm-input{
-   width: 64px
+   width: 250px
  }
 
 .label-login{

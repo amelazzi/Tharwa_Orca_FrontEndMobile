@@ -5,6 +5,7 @@ import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
 import { Page2Component } from "./rpage2/page2.component";
 import { CodeComponent } from "./code/code.component";
+import { HistoriqueComponent } from "./historique/historique.component";
 
 /*export const routes: Routes = [
     {path: "", redirectTo: "login", pathMatch: "full" },
@@ -21,19 +22,20 @@ import { CodeComponent } from "./code/code.component";
 ];*/
 
 export const routes = [
-    { path: "code", component: LoginComponent },
+    { path: "", component: LoginComponent },
     { path: "register", component: RegisterComponent},
     {path : "page2", component: Page2Component},
-    {path: "", component: CodeComponent},
+    {path : "code", component: CodeComponent},
     {path: "home", loadChildren: "./home/home.module#HomeModule" },
+    {path: "historique", component: HistoriqueComponent},
     {path: "browse", loadChildren: "./browse/browse.module#BrowseModule" },
     {path: "search", loadChildren: "./search/search.module#SearchModule" },
     {path: "featured", loadChildren: "./featured/featured.module#FeaturedModule" },
-    {path: "settings", loadChildren: "./settings/settings.module#SettingsModule" },
+    {path: "settings", loadChildren: "./settings/settings.module#SettingsModule" }
 ];
 
 export const navigatableComponents = [
-  LoginComponent, RegisterComponent, Page2Component, CodeComponent
+  LoginComponent, RegisterComponent, Page2Component, CodeComponent, HistoriqueComponent
 ];
 /*@NgModule({
     imports: [NativeScriptRouterModule.forRoot(routes)],
