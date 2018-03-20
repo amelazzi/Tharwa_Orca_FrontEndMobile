@@ -8,67 +8,71 @@ ActionBar{
     font-size: 20pt;
 }
 
-.TabTitle{
-    color: #FAE6E9;
-}
-
-.TabLabel{
-    color: #F64060;
+.profil-name{
+    color: black;
+    font-family: Meduim;
+    font-size: 20pt;
     text-align: center;
+}
+
+.profil-email{
+    color: black;
+    opacity: 0.5;
+    font-family: Roboto;
+    font-size: 16pt;
+    text-align: center;
+}
+
+.profil{
+    margin-top: 72px;
+    margin-left: 72px;
+}
+
+.profil-info{
+    margin-left:64px;
+    margin-top: 0px;
+}
+
+.edit-button{
+    background-color: white;
+    color: #F64060;
+    width: 300px;
+    height: 100px;
     margin-top: 32px;
+    font-size: 16pt;
+    margin-left:-356px;
+}
+
+.list-layout{
+    background-color:white; 
+    margin-top:32px;
     margin-bottom: 32px;
+}
+
+.list-item{
+    padding: 12;
+    margin-left: 16;
+}
+
+.list-comptes{
+    color: black;
+    margin-left: 16;
+    font-family: Meduim;
     font-size: 20pt;
-}
-
-.card{
-    border-radius: 24px;
-    width: 75%;
-    height: 75%;
-}
-
-.cardTitle{
     margin-top: 32px;
-    margin-left: 32px;
-    color: white;
-    font-size: 20pt;
 }
 
-.cardTotal{
-    margin-left: 32px;
-    color: white;
-    font-size: 38pt;
-    margin-bottom: 16px
+.list-label{
+    color: black;
+    margin-left: 16;
+    font-family: Meduim;
+    font-size: 18pt;
 }
 
-.tauxDeChange{
-    margin-left: 32px;
-    color: white;
-    font-size: 28pt;
-    margin-bottom: 72px;
-}
-
-.card-button {
-    background-color:transparent;
-    border-color: white;
-    border-radius: 54px;
-    border-style: solid;
-    border-width: 5px;
-    color: white;
-    width: 85%;
-    margin-top: 32px;
-  }
-
-TabView{
-
-    tab-text-color: #C13A4D;
-    selected-tab-text-color: #F64060;
-}
-
-.fab-button {
-    height: 70;
-    width: 70;
-    margin: 15;
-    background-color: #F64060; 
-    horizontal-align: right;
-    margin-top: 932px;
+.list-cost{
+    color: black;
+    opacity: 0.5;
+    margin-left: 16;
+    font-family: Roboto;
+    font-size: 16pt;
 }

@@ -1,4 +1,4 @@
-<FlexboxLayout class="page">
+
 <StackLayout>
     <Image src="res://login_logo" stretch="none" horizontalAlignment="center"></Image>
   
@@ -8,10 +8,9 @@
     
     <Button text="Se connecter" class="submit-button" (tap)="submit()"></Button>
     
-    <label class="label-login" text="Créer un compte"  (tap)="register()"></label>
-
+    <label class="label-login" text="Créer un compte"  (tap)="register()"></label> 
+    <StackLayout style="margin-top:200px">
+        <Image src="res://footer" stretch="none" horizontalAlignment="center" class="footer"></Image>
+    </StackLayout>  
 </StackLayout>
 
-    <Image src="res://footer" stretch="none" horizontalAlignment="center" class="footer"></Image>
-
-</FlexboxLayout>
