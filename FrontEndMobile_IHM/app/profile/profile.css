@@ -52,6 +52,7 @@ ActionBar{
 .list-item{
     padding: 12;
     margin-left: 16;
+    margin-top: 8
 }
 
 .list-comptes{
@@ -67,12 +68,5 @@ ActionBar{
     margin-left: 16;
     font-family: Meduim;
     font-size: 18pt;
-}
-
-.list-cost{
-    color: black;
-    opacity: 0.5;
-    margin-left: 16;
-    font-family: Roboto;
-    font-size: 16pt;
+    margin-top: 8px;
 }
