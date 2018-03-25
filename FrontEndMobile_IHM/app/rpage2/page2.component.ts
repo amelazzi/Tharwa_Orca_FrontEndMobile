@@ -14,7 +14,7 @@ import * as Camera from "nativescript-camera";
     selector: "ns-page2",
     providers : [UserService],
     templateUrl: "page2.component.html",
-    styleUrls:["./page2.css"]
+    styleUrls: ["./page2.css"]
 })
 export class Page2Component implements OnInit{
      user: User ;
@@ -45,7 +45,6 @@ ngOnInit(){
         if(this.user.firstname && this.user.lastname && this.user.email && this.user.password &&
         this.user.job && this.user.phone && this.user.address) 
         {
-            alert("ça va");
         this.userService.register(this.user)
         .map(response => 
             {
@@ -62,7 +61,6 @@ ngOnInit(){
             
             (res) =>
              {
-
                alert("success");
               this.router.navigate(["/home"]);
             

@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   public myCode;
   public access_token;
   public refresh_token;
-  constructor(private router: Router, private userService: UserService, private page: Page) {
+  constructor(private router: Router, private userService: UserService,private page: Page) {
     this.user = new User(0);
     this.choice = "";
   }
