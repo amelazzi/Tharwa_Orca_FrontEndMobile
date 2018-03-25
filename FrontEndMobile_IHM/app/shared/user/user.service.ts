@@ -61,14 +61,16 @@ refreshLogin(refresh_token)
   
 
   register(user: User) {
-    return this.http.post(
-      Config.apiUrl + "user/" + Config.appKey,
-      JSON.stringify({
-        email: user.email,
-        password: user.password
-      }),
-      { headers: this.getCommonHeaders() }
-    )
+    var headers = new Headers();
+  
+ 
+    headers.append("Content-Type", "application/x-www-form-urlencoded");
+    headers.append("Authorization","Basic Y2xpZW50bW9iaWxlOm9yY2FAMjAxOA==");    
+  
+    const body="avatar="+user.picture+"&userId="+user.email+"&UserName=Test&Pwd="+user.password+"&Tel="+user.phone+"&type=0&Nom="+user.firstname+"&Prenom"+user.lastname
+    +"Adresse="+user.address+"Fonction="+user.job;
+  
+    return this.http.post('http://localhost:8080/users/ClientInscription',body, {headers: headers})
     .catch(this.handleErrors);
   }
   

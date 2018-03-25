@@ -46,13 +46,31 @@ ngOnInit(){
         this.user.job && this.user.phone && this.user.address) 
         {
             alert("ça va");
-        this.userService.register(this.user).subscribe(
-           () => {
-              alert("compte créer avec succés.");
-              this.location.back();
-            },
-          error => alert("Erreur Compte n'a pas été créé!")
+        this.userService.register(this.user)
+        .map(response => 
+            {
+             response = response.json();
+          
+            })
+          .do(data => {
+         
+        
+        
+        //Config.token = data.access_token
+      })
+          .subscribe(
+            
+            (res) =>
+             {
+
+               alert("success");
+              this.router.navigate(["/home"]);
+            
+          },
+           
+            (error) => alert("something went wrong")
           );
+           
         }
         else    
         {
