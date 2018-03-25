@@ -45,7 +45,6 @@ ngOnInit(){
         if(this.user.firstname && this.user.lastname && this.user.email && this.user.password &&
         this.user.job && this.user.phone && this.user.address) 
         {
-            alert("ça va");
         this.userService.register(this.user)
         .map(response => 
             {
