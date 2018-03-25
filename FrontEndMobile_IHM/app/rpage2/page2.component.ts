@@ -40,6 +40,7 @@ ngOnInit(){
     public goBack() {
         this.location.back();
     }
+    public NumCompte;
     public register() 
     {
         if(this.user.firstname && this.user.lastname && this.user.email && this.user.password &&
@@ -49,6 +50,9 @@ ngOnInit(){
         .map(response => 
             {
              response = response.json();
+             this.NumCompte = response.NumCompte;
+             //// Pour voir la réponse ////
+             console.log("ceci est un test pour voir la réponse : "+this.NumCompte);
           
             })
           .do(data => {
