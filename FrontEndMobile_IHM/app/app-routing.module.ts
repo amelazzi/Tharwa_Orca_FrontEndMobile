@@ -27,11 +27,12 @@ export const routes = [
 
     {path: "profil", redirectTo: "profile", pathMatch: "full" },
     {path: "register", component: RegisterComponent},
+    {path : "", component: LoginComponent},
     {path : "page2", component: Page2Component},
     {path: "code", component: CodeComponent},
     {path: "home", loadChildren: "./home/home.module#HomeModule" },
     {path: "profile", loadChildren: "./profile/profile.module#ProfileModule" },
-    {path: "", component: EditProfilComponent},
+    {path: "editProfil", component: EditProfilComponent},
     {path: "historique", loadChildren: "./historique/historique.module#HistoriqueModule" },
     {path: "browse", loadChildren: "./browse/browse.module#BrowseModule" },
     {path: "search", loadChildren: "./search/search.module#SearchModule" },
