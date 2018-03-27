@@ -61,10 +61,12 @@ ngOnInit(){
     public goBack() {
         this.location.back();
     }
+
    
     public register() 
     {
         this.router.navigate(["/home"]);
+
     }
     
     public goSuivant()

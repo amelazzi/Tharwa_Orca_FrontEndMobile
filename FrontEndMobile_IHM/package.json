@@ -42,8 +42,14 @@
     "nativescript-toast": "^1.4.6",
     "node-sass": "^4.7.2",
     "reflect-metadata": "~0.1.10",
+<<<<<<< HEAD
     "rxjs": "^5.5.7",
     "tns-core-modules": "^4.0.0-2018-03-22-03",
+=======
+    "rxjs": "~5.5.5",
+    "socket.io": "^2.0.4",
+    "tns-core-modules": "~3.4.0",
+>>>>>>> 0ca21d4685308df3642b8594db884aebe5d0a68f
     "tns-ng": "^1.1.0",
     "zone.js": "~0.8.18"
   },

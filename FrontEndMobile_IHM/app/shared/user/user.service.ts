@@ -59,11 +59,9 @@ refreshLogin(refresh_token){
   register (user: User){
     var headers = new Headers();
     headers.append("Content-Type", "application/x-www-form-urlencoded");
-    //headers.append("token","1g1CMMMZydA4YT3GWHTiC9d5PjdxsD7Z8nL6jNdpBzOJYSOj6LC0ZWUslHxeuDXmPh6MPRDiSUxY2L9ZBay4JirDlTxwVZcGbmdwAftaKK6B5DbDZMCbLRATjCDTwxcRb1bXVzqLSCeWdpym0eJ61bgxNpI3FkFQZPVEwa7hOFCklxNgXoFR7F6X5GHSkA0bupdCo5hzji8khXIz4ly8fyC3mq3FgcOu8Ogfhw9nGxt1r72V2PGy4EI3Tt0SiQr");
     
     const body = "avatar=" + user.picture + "&userId=" + user.email + "&UserName=Test&Pwd=" + user.password + "&Tel=" + user.phone + "&type=0&Nom=" + user.firstname + "&Prenom" + user.lastname
     + "Adresse=" + user.address + "Fonction=" + user.job;
-  
     return this.http.post('http://192.168.101.50:4000/users/ClientInscription',body, {headers: headers})
     .catch(this.handleErrors);
   }
@@ -107,7 +105,6 @@ public remove(index: number,images:Array<String>) {
         images.splice(index, 1);
       });
 }
-
 
   login(user: User) {
     return this.http.post(
