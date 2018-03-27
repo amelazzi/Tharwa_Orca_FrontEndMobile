@@ -1,5 +1,5 @@
 <StackLayout>
-	<Image src="res://login_logo" stretch="none" horizontalAlignment="center"></Image>
+	<Image [src]="picture" stretch="none" horizontalAlignment="center" class="imageCss"></Image>
 	<ScrollView orientation="vertical">
 	<StackLayout>
 	
@@ -10,8 +10,9 @@
 		<TextField hint="Fonction"  [(ngModel)]="user.job"></TextField>
 		
 		<Button class="profile-button" text="Photo de profil" (tap)="cameraOpen()"></Button>
-		<Image [src]="picture"></Image>
-		<Button class="conf-button" text="Confirmer" (tap)="register()"></Button>
+
+		<Button class="conf-button" text="Confirmer" (tap)="confirmer()"></Button>
+
 		<Label class="label-register" (tap)="goBack()" text="Page précédente"></Label>
 	
 	</StackLayout>

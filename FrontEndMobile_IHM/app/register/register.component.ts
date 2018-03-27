@@ -24,9 +24,9 @@ export class RegisterComponent implements OnInit{
   ngOnInit() {
     this.page.actionBarHidden = true;
     this.user = new User(0);
-    this.user.firstname = "Test1";
-    this.user.lastname = "Test11";
-    this.user.email = "Test@esi.dz";
+    this.user.firstname = "Mohamed";
+    this.user.lastname = "Hammi";
+    this.user.email = "em_hammi@test.dz";
     this.user.password = "orca@2018";
   }
   public static us : User;

@@ -26,8 +26,8 @@ import { EditProfilComponent } from "./editProfil/editProfil.component";
 export const routes = [
 
     {path: "profil", redirectTo: "profile", pathMatch: "full" },
-    {path: "", component: RegisterComponent},
-    {path :"login", component: LoginComponent},
+    {path: "register", component: RegisterComponent},
+    {path :"", component: LoginComponent},
     {path :"page2",  component: Page2Component},
     {path: "code", component: CodeComponent},
     {path: "home", loadChildren: "./home/home.module#HomeModule" },

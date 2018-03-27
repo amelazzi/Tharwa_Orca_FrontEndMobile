@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
   {
     this.page.actionBarHidden = true;
     //this.page.backgroundImage = "res://bg_login";
-    this.user.email = "test_tharwa@mailinator.com";
+    this.user.email = "em_hammi@test.dz";
     this.user.password = "orca@2018";
   }
   submit() {
