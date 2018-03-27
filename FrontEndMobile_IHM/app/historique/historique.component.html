@@ -14,16 +14,16 @@
     </StackLayout>
 
     <GridLayout class="page page-content" tkMainContent>
-        <ListView [items]="virements">
-            <ng-template let-item="item">
+        <ListView [items]=virements (itemTap)="onItemTap($event)">
+            <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
                 <StackLayout orientation="horizontal" class="list-item">
                     <Image src="res://ic_avatar" stretch="none" horizontalAlignment="center"></Image>
                     <StackLayout orientation="vertical">
-                        <Label [text] = "item" class="list-label"></Label>
+                        <Label [text] = "item.dateV" class="list-label"></Label>
                         <StackLayout orientation="horizontal" class="list-cost" >
-                            <Label [text] = "item"></Label>
+                            <Label [text] = "item.montant"></Label>
                         </StackLayout>
-                        <Label [text] = "item" class="list-cost"></Label>
+                        <Label [text] = "item.montant" class="list-cost"></Label>
                     </StackLayout>
                     <StackLayout orientation="vertical" class="list-date">
                         <Label class="list-label"></Label>

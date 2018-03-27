@@ -1,5 +1,5 @@
 /*import { Component } from "@angular/core";
-
+import "rxjs/Rx";
 @Component({
     selector: "ns-app",
     templateUrl: "app.component.html"

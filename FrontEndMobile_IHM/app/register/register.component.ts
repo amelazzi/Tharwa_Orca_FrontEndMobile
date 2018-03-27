@@ -5,7 +5,6 @@ import * as ApplicationSettings from "application-settings";
 import { User } from "../shared/user/user";
 import { UserService } from "../shared/user/user.service";
 import { Router , NavigationExtras } from "@angular/router";
-import * as camera from "nativescript-camera";
 import {Page} from "ui/page";
 import { Page2Component } from "../rpage2/page2.component";
 
@@ -24,6 +23,11 @@ export class RegisterComponent implements OnInit{
    public 
   ngOnInit() {
     this.page.actionBarHidden = true;
+    this.user = new User(0);
+    this.user.firstname = "Test1";
+    this.user.lastname = "Test11";
+    this.user.email = "Test@esi.dz";
+    this.user.password = "orca@2018";
   }
   public static us : User;
     public constructor(private location: Location,private router: Router, private userService: UserService,private page: Page) {
@@ -62,7 +66,6 @@ export class RegisterComponent implements OnInit{
     public  goSuivant()
     {
        
-    
         let navigationExtras : NavigationExtras = {
             queryParams: {
                 "firstname":this.user.firstname,
@@ -73,7 +76,6 @@ export class RegisterComponent implements OnInit{
         }
         this.router.navigate(["/page2"],navigationExtras);
         
-      
     }
   
    /* public takePic()
@@ -91,6 +93,9 @@ export class RegisterComponent implements OnInit{
     
     }
 */
-
+private validateEmail(email: any) {
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
 
 }

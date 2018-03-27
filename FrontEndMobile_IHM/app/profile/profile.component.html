@@ -1,17 +1,10 @@
-<ActionBar class="action-bar">
-    <!-- 
-    Use the NavigationButton as a side-drawer button in Android because ActionItems are shown on the right side of the ActionBar
-    -->
-    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
-    <!-- 
-    Use the ActionItem for IOS with position set to left. Using the NavigationButton as a side-drawer button in iOS is not possible, because its function is to always navigate back in the application.
-    -->
-    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
-        ios.position="left">
-    </ActionItem>
-    <Label class="action-bar-title" text="Profile"></Label>
-</ActionBar>
+<ActionBar title="Profil" class="ActionBarTitle">
+    
+    <NavigationButton text="Go Back" icon="res://ic_navbar"></NavigationButton>
+    <ActionItem ios.systemIcon="2" icon="res://ic_notifications" ios.position="right"></ActionItem>
+    <ActionItem ios.systemIcon="3" icon="res://ic_account" ios.position="right"></ActionItem>
 
+</ActionBar>
 
 <RadSideDrawer #drawer showOverNavigation="true" [drawerTransition]="sideDrawerTransition">
     <!--
@@ -24,8 +17,35 @@
     <!--
     Use the tkMainContent directive to display the content of the page when you have an app drawer.
     -->
-    <GridLayout class="page page-content" tkMainContent>
-  
-        <Label class="page-placeholder" text="<!-- Page content goes here -->"></Label>
+    <GridLayout class="page page-content" tkMainContent style="background-color: gainsboro">
+        <StackLayout>
+            <StackLayout>
+                <StackLayout orientation="horizontal" class="profil">
+                    <Image src="res://avatar" stretch="none" horizontalAlignment="center"></Image>
+                    <StackLayout orientation="vertical" class="profil-info">
+                        <Label class="profil-email" text=""></Label>
+                        <Label class="profil-name" text="Amel AZZI"></Label>
+                        <Label class="profil-email" text="ea_azzi@esi.dz"></Label>
+                        <Label class="profil-email" text="0659949808"></Label>
+                    </StackLayout>
+                </StackLayout>
+                <Button class="edit-button" text="Edit Profil"></Button>
+            </StackLayout>
+                     
+            <StackLayout class="list-layout">
+                <Label text= "Comtpes" class="list-comptes"></Label>
+                <ListView [items]="students">
+                    <ng-template let-item="item">
+                        <StackLayout orientation="horizontal" class="list-item">
+                            <Image src="res://ic_dzd_courant" stretch="none" horizontalAlignment="center"></Image>
+                            <StackLayout orientation="vertical">
+                                <Label [text] = "item" class="list-label"></Label>
+                                <Label [text] = "item" class="list-cost"></Label>
+                            </StackLayout>
+                        </StackLayout>
+                    </ng-template>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
     </GridLayout>
 </RadSideDrawer>

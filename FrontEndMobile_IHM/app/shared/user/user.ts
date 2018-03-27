@@ -1,4 +1,5 @@
 import { BehaviorSubject } from "rxjs/BehaviorSubject";
+import { File } from "tns-core-modules/file-system/file-system";
 
 export class User {
     id : number;

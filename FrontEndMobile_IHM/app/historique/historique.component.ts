@@ -12,6 +12,11 @@ import { TabView, SelectedIndexChangedEventData } from "ui/tab-view";
 import { VirementService } from '../shared/virement/virement.service';
 import { Virement } from '../shared/virement/virement';
 
+class DataItem {
+    constructor(public id: number, public name: string) { }
+}
+
+
 @Component({
     moduleId: module.id,
     selector: 'Historique',
@@ -22,6 +27,8 @@ import { Virement } from '../shared/virement/virement';
 export class HistoriqueComponent implements OnInit {
 
     @ViewChild('scrollView') scrollView: ElementRef;
+    public myItems: Array<DataItem>;
+    private counter: number;
 
     public virements: Array<Virement>;
 
@@ -51,11 +58,16 @@ export class HistoriqueComponent implements OnInit {
         this.v3 =new Virement("14/05/2018","Mohamed Hammi","Amel Azi",4000,"bye bye","validé");
         this.virements = new Array<Virement>();
         this.virements.push(this.v1,this.v2,this.v3);
-        console.log(this.v1.dateV);
+      //  console.log(this.v1.dateV);
     }
     public constructor(private router:Router,private route:ActivatedRoute,private userService: UserService,private infoService: InfoService,private virementService : VirementService)
     {  
-        
+        this.myItems = [];
+        this.counter = 0;
+        for (var i = 0; i < 50; i++) {
+            this.myItems.push(new DataItem(i, "data item " + i));
+            this.counter = i;
+        }
      
     }
 
@@ -65,6 +77,10 @@ export class HistoriqueComponent implements OnInit {
 
     onDrawerButtonTap(): void {
         this.drawerComponent.sideDrawer.showDrawer();
+    }
+
+    public onItemTap(args) {
+        console.log("------------------------ ItemTapped: " + args.index);
     }
 
 

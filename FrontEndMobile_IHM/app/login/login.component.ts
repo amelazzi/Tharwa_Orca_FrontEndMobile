@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   public user: User;
   isLoggingIn = true;
   viaSMS = false;
-  choice : string ="";
+  choice: string = "";
   viaMail = false;
   public myCode;
   public access_token;
@@ -30,8 +30,8 @@ export class LoginComponent implements OnInit {
   {
     this.page.actionBarHidden = true;
     //this.page.backgroundImage = "res://bg_login";
-    this.user.email ="test_tharwa@mailinator.com";
-    this.user.password="orca@2018";
+    this.user.email = "test_tharwa@mailinator.com";
+    this.user.password = "orca@2018";
   }
   submit() {
     dialogs.action({
@@ -40,13 +40,13 @@ export class LoginComponent implements OnInit {
       cancelButtonText: "ANNULER",
       actions: ["Email", "SMS"]
   }).then(result => {
-      if(result == "Email"){
-          this.choice="0";
+      if (result == "Email") {
+          this.choice = "0";
           this.viaMail = true;
           this.toNextPage();
-      }else if(result == "SMS"){
-        this.choice= "1";
-        this.viaSMS= true;
+      }else if (result == "SMS") {
+        this.choice = "1";
+        this.viaSMS = true;
         this.toNextPage();
       }
   });

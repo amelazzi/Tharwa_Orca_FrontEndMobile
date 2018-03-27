@@ -25,6 +25,8 @@ export class ProfileComponent implements OnInit {
     expires;
     user: User;
     info: Info;
+
+    public students = ["Courant", "Epargne", "Devise Euro", "Devise Dollar"];
     /* ***********************************************************
     * Use the @ViewChild decorator to get a reference to the drawer component.
     * It is used in the "onDrawerButtonTap" function below to manipulate the drawer.
