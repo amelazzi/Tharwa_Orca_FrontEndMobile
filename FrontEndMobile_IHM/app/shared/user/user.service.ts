@@ -28,7 +28,7 @@ authentifier(user :User,code:string)
 
   const body = "userId=" + user.email + "&Pwd=" + user.password + "&code=" + code;
 
-  return this.http.post('https://192.168.101.54:4000/oauth/code',body, {headers: headers})
+  return this.http.post('http://192.168.43.221:8081/oauth/code',body, {headers: headers})
   .catch(this.handleErrors);
 }
 sendCode(username :string ,code: string)
@@ -41,7 +41,7 @@ sendCode(username :string ,code: string)
 
   const body = "grant_type=password&username=" + username + "&password=" + code
 
-  return this.http.post('https://192.168.101.54:4000/oauth/login',body, {headers: headers})
+  return this.http.post('http://192.168.43.221:8081/oauth/login',body, {headers: headers})
   .catch(this.handleErrors);
 }
 refreshLogin(refresh_token){
@@ -52,17 +52,25 @@ refreshLogin(refresh_token){
 
   const body = "grant_type=refresh_token&refresh_token=" + refresh_token
 
-  return this.http.post('https://192.168.101.54:4000/oauth/refresh',body, {headers: headers})
+  return this.http.post('http://192.168.43.221:8081/oauth/refresh',body, {headers: headers})
   .catch(this.handleErrors);
 }
 
-  register (user: User){
+ public  register (user: User){
     var headers = new Headers();
     headers.append("Content-Type", "application/x-www-form-urlencoded");
     
     const body = "avatar=" + user.picture + "&userId=" + user.email + "&UserName=Test&Pwd=" + user.password + "&Tel=" + user.phone + "&type=0&Nom=" + user.firstname + "&Prenom" + user.lastname
     + "Adresse=" + user.address + "Fonction=" + user.job;
-    return this.http.post('http://192.168.101.54:4000/users/ClientInscription',body, {headers: headers})
+    return this.http.post('http://192.168.43.221:4000/users/ClientInscription',body, {headers: headers})
+    .catch(this.handleErrors);
+  }
+
+  public getInfo (access_token :string){
+    var headers = new Headers();
+    headers.append("token", access_token);
+
+    return this.http.get('http://192.168.43.221:4000/clients/info', {headers: headers})
     .catch(this.handleErrors);
   }
 

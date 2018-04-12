@@ -81,7 +81,7 @@ export class CodeComponent implements OnInit{
               }
           }
               
-            this.router.navigate(["/home"],navigationExtras);
+            this.router.navigate(["/profile"],navigationExtras);
             
            },
            

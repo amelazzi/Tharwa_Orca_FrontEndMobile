@@ -175,8 +175,7 @@ export class Page2Component implements OnInit {
             });
     }
 
-
-    private uploadMultipartImagePicker(image: any): Subject<any> {
+ private uploadMultipartImagePicker(image: any): Subject<any> {
 
         let fileUri = image.fileUri;
         let filename = fileUri.substring(fileUri.lastIndexOf('/') + 1);
@@ -185,7 +184,7 @@ export class Page2Component implements OnInit {
         let request;
         uploadType = "image";
         request = {
-            url: "http://192.168.101.54:4000/users/ClientInscription",
+            url: "http://192.168.43.221:4000/users/ClientInscription",
             method: "POST",
             headers: {
                 "Content-Type": "application/form-data",
@@ -199,7 +198,7 @@ export class Page2Component implements OnInit {
             { name: "userId", value: this.user.email },
             { name: "Nom", value: this.user.lastname },
             { name: "Prenom", value: this.user.firstname },
-            { name: "UserName", value: "MohamedTest" },
+            { name: "UserName", value: "MohamedTest22" },
             { name: "Pwd", value: "orca@2018" },
             { name: "Tel", value: this.user.phone },
             { name: "type", value: this.type },

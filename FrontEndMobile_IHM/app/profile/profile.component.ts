@@ -39,6 +39,9 @@ export class ProfileComponent implements OnInit {
     * Use the sideDrawerTransition property to change the open/close animation of the drawer.
     *************************************************************/
     ngOnInit(): void {
+
+        this.user = new User(0);
+        this.user.firstname ="default";
         this._sideDrawerTransition = new SlideInOnTopTransition();
         this.route.queryParams.subscribe(params =>{
             this.access_token= params["access_token"],
@@ -46,13 +49,14 @@ export class ProfileComponent implements OnInit {
             this.expires = params["expires"]
 
     });
-    this.infoService.demanderInfo(this.info,this.access_token)
+    this.userService.getInfo(this.access_token)
     .map(response => 
         {
-         response = response.json();
-         
-         console.log("miaw2 :"+JSON.stringify(response));
-        })
+     
+         alert(response);
+         this.user.firstname =response.Nom;
+           
+            })
       .do(data => {
      
     
@@ -69,7 +73,7 @@ export class ProfileComponent implements OnInit {
         
        },
        
-      //  (error) => this.router.navigate(["/login"])
+        (error) => alert("Niceeee")
       );
     }
     public constructor(private router:Router,private route:ActivatedRoute,private userService: UserService,private infoService: InfoService)

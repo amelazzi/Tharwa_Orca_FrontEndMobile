@@ -1,11 +1,11 @@
 <StackLayout>
-	<Image [src]="picture" stretch="none" horizontalAlignment="center" class="imageCss"></Image>
+	<Image [src]="picture" stretch="aspectFit" horizontalAlignment="center" class="imageCss"></Image>
 	<ScrollView orientation="vertical">
 	<StackLayout>
 	
 		<TextField hint="Adresse"  [(ngModel)]="user.address"></TextField>
 		
-		<TextField hint="Numero Telephone"  [(ngModel)]="user.phone"></TextField>
+		<TextField hint="Numero Telephone"  keyboardType="phone"  [(ngModel)]="user.phone"></TextField>
 		
 		<TextField hint="Fonction"  [(ngModel)]="user.job"></TextField>
 		
