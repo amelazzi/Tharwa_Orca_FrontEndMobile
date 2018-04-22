@@ -1,20 +1,20 @@
 <StackLayout>
 	<Image [src]="picture" stretch="aspectFit" horizontalAlignment="center" class="imageCss"></Image>
 	<ScrollView orientation="vertical">
-	<StackLayout>
-	
-		<TextField hint="Adresse"  [(ngModel)]="user.address"></TextField>
+		<StackLayout>
 		
-		<TextField hint="Numero Telephone"  keyboardType="phone"  [(ngModel)]="user.phone"></TextField>
-		
-		<TextField hint="Fonction"  [(ngModel)]="user.job"></TextField>
-		
-		<Button class="profile-button" text="Photo de profil" (tap)="cameraOpen()"></Button>
+			<TextField hint="Adresse"  [(ngModel)]="user.address"></TextField>
+			
+			<TextField hint="Numero Telephone" [(ngModel)]="user.phone"></TextField>
+			
+			<TextField hint="Fonction"  [(ngModel)]="user.job"></TextField>
+			
+			<Button class="profile-button" text="Photo de profil" (tap)="cameraOpen()"></Button>
 
-		<Button class="conf-button" text="Confirmer" (tap)="confirmer()"></Button>
+			<Button class="conf-button" text="Confirmer" (tap)="confirmer()"></Button>
 
-		<Label class="label-register" (tap)="goBack()" text="Page précédente"></Label>
-	
-	</StackLayout>
+			<Label class="label-register" (tap)="goBack()" text="Page précédente"></Label>
+		
+		</StackLayout>
 	</ScrollView>
-	</StackLayout>
+</StackLayout>
