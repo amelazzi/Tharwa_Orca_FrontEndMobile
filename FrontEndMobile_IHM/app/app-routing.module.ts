@@ -9,19 +9,7 @@ import { ProfileComponent } from "./profile/profile.component";
 import { HistoriqueComponent } from "./historique/historique.component";
 import { EditProfilComponent } from "./editProfil/editProfil.component";
 
-/*export const routes: Routes = [
-    {path: "", redirectTo: "login", pathMatch: "full" },
-    {path: "login", loadChildren: "./login/login.module#LoginModule" },
-    {path: "register", loadChildren: "./register/register.module#RegisterModule" },
-    {path : "page2", loadChildren: "./rpage2/page2.module#Page2Module"},
-    //{path: "code", loadChildren: "./code/code.module#CodeModule"},
-    {path: "home", loadChildren: "./home/home.module#HomeModule" },
-    {path: "browse", loadChildren: "./browse/browse.module#BrowseModule" },
-    {path: "search", loadChildren: "./search/search.module#SearchModule" },
-    {path: "featured", loadChildren: "./featured/featured.module#FeaturedModule" },
-    {path: "settings", loadChildren: "./settings/settings.module#SettingsModule" }
 
-];*/
 
 export const routes = [
 
@@ -43,8 +31,4 @@ export const routes = [
 export const navigatableComponents = [
   LoginComponent, RegisterComponent, CodeComponent, EditProfilComponent,Page2Component
 ];
-/*@NgModule({
-    imports: [NativeScriptRouterModule.forRoot(routes)],
-    exports: [NativeScriptRouterModule]
-})
-export class AppRoutingModule { }*/
+
