@@ -1,0 +1,29 @@
+ <ActionBar title="Notifications" flat="true">
+    <ActionItem ios.position="left" (tap)="toggleTheMenu()" *ngIf="isIOS">
+      <Label class="mdi-actionitem mdi-menu" [text]="'mdi-hamburger' | fonticon"></Label>
+    </ActionItem>
+    <Label horizontalAlignment="left" class="mdi-actionitem mdi-menu" 
+    [text]="'mdi-hamburger' | fonticon" (tap)="toggleTheMenu()" *ngIf="!isIOS"></Label>
+    <Label horizontalAlignment="center" class="semibold" text="Notifications" *ngIf="isIOS"></Label>
+    <ActionItem ios.systemIcon="3" icon="res://ic_account" ios.position="right" (tap)="goProfile()"></ActionItem>
+  </ActionBar>
+
+<GridLayout class="main-content">
+        <Gradient height="100%" direction="to right" colors="#dae2f8, #d6a4a4" class="p-20">
+        <ListView [items]="notificationArray">
+            <ng-template let-item="item" let-i="index">
+                <StackLayout orientation="horizontal" class="list-item">
+                    <Image [src]="item.avatar" stretch="none" horizontalAlignment="center"></Image>
+                    <StackLayout orientation="vertical">
+                        <Label [text] = "item.evenement" class="list-label"></Label>
+                        <StackLayout orientation="horizontal" class="list-cost" >
+                            <Label [text] = "item.montant"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout orientation="vertical" class="list-date">
+                    </StackLayout>
+                </StackLayout>
+            </ng-template>
+        </ListView>
+        </Gradient>
+</GridLayout>

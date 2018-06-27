@@ -1,0 +1,24 @@
+<ActionBar title="Edit Employer" class="ActionBarTitle">
+    
+  <NavigationButton text="Go Back" icon="res://ic_arrow_back"></NavigationButton>
+  <ActionItem ios.systemIcon="2" icon="res://ic_notifications" ios.position="right"></ActionItem>
+  <ActionItem ios.systemIcon="3" icon="res://ic_account" ios.position="right"></ActionItem>
+
+</ActionBar>
+
+<StackLayout >
+
+    <Label text="Veuillez les informations de l'employer" class="texte"></Label>
+
+    <TextField hint="Nom"  [(ngModel)]="employer.nom"></TextField>
+
+    <TextField hint="Prenom" [(ngModel)]="employer.prenom"></TextField>
+
+    <TextField hint="Num Compte" [(ngModel)]="employer.numCompte"></TextField>
+
+    <TextField hint="Montant" [(ngModel)]="employer.montant"></TextField>
+                
+    <Button class="next-button" text="Suivant" (tap)="goSuivant()"></Button>
+
+</StackLayout>
+

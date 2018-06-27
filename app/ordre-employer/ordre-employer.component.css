@@ -1,0 +1,38 @@
+ActionBar{
+    background-color:#F64060
+}
+
+.ActionBarTitle{
+    color:white;
+    font-family:Medium;
+    font-size:20pt
+}
+
+.list-item{
+    padding:12
+}
+
+.list-label{
+    color:black;
+    margin-left:16;
+    font-family:Meduim;
+    font-size:16pt
+}
+
+.list-cost{
+    color:black;
+    opacity:0.5;
+    margin-left:16;
+    font-family:Roboto;
+    font-size:14pt
+}
+
+.add-button{
+    background-color:white;
+    color:#F64060;
+    width:40%;
+    height:100px;
+    margin-top:32px;
+    margin-bottom: 32px;
+    font-size:16pt;
+}

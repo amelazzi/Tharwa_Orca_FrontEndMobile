@@ -1,0 +1,26 @@
+<ActionBar title="Infos Employers" class="ActionBarTitle">
+    
+    <NavigationButton text="Go Back" icon="res://ic_arrow_back"></NavigationButton>
+    <ActionItem ios.systemIcon="2" icon="res://ic_notifications" ios.position="right"></ActionItem>
+    <ActionItem ios.systemIcon="3" icon="res://ic_account" ios.position="right"></ActionItem>
+  
+  </ActionBar>
+  
+    <StackLayout  style="background-color: gainsboro">
+        <Button class="add-button" text="valider" (tap)="valider()" ></Button>
+  
+        <GridLayout class="page page-content" tkMainContent  style="background-color: white">
+            <ListView [items]="employerArray">
+                <ng-template let-item="item" let-i="index">
+                    <StackLayout orientation="vertical" (tap)="next($event)" [id]="i" >
+                        <Label [text] = "item.nom" class="list-label"></Label>
+                        <StackLayout orientation="horizontal" class="list-cost" >
+                            <Label [text] = "item.numCompte"></Label>
+                        </StackLayout>
+                        <Label [text] = "item.montant" class="list-cost"></Label>
+                    </StackLayout>
+                </ng-template>
+            </ListView>
+        </GridLayout>
+    </StackLayout>
+    

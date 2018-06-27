@@ -1,0 +1,33 @@
+<ActionBar title="Virement Interne" class="ActionBarTitle">
+
+    <NavigationButton text="Go Back" icon="res://ic_arrow_back"></NavigationButton>
+    <ActionItem ios.systemIcon="2" icon="res://ic_notifications" ios.position="right"></ActionItem>
+    <ActionItem ios.systemIcon="3" icon="res://ic_account" ios.position="right"></ActionItem>
+
+</ActionBar>
+
+<StackLayout orientation="vertical">
+    <Gradient height="100%" direction="to right" colors="#dae2f8, #d6a4a4" class="p-20">
+    <Label text="Veuillez remplir le formulaire pour completer" class="texte"></Label>
+    <Label text="l'opération du virement." class="texte"></Label>
+
+    <StackLayout style="margin-top:32px">
+        <StackLayout>
+            <ListPicker [items]="accounts" selectedIndex="1" (selectedIndexChange)="selectedIndexChanged($event)" class="p-15"></ListPicker>
+        </StackLayout>
+        <TextField hint="Montant" [hint]="unit" keyboardType="number" [(ngModel)]="virement.montant"></TextField>
+        <Button class="next-button" text="Suivant" (tap)="Next()"></Button>
+    </StackLayout>
+    <StackLayout [@scale-in]="'in'" row="1" class="transparent-area m-t-20">
+            <Label text="Balance Totale :" class="cardTitle"></Label>
+            <Label [text]="liveBalance(0)" class="cardTotal"></Label>
+            <Label text="Comission :" class="cardTitle"></Label>
+            <Label [text]="getComission()" class="cardTotal"></Label>
+    </StackLayout>
+    <StackLayout [@scale-in]="'in'" row="1" class="transparent-area m-t-20">
+            <Label text="Balance Totale :" class="cardTitle"></Label>
+            <Label [text]="liveBalance(1)" class="cardTotal"></Label>
+    </StackLayout>
+    </Gradient>
+</StackLayout>
+

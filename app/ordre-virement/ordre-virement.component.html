@@ -1,0 +1,27 @@
+<ActionBar title="Ordres De Virement" class="ActionBarTitle">
+    
+  <NavigationButton text="Go Back" icon="res://ic_arrow_back"></NavigationButton>
+  <ActionItem ios.systemIcon="2" icon="res://ic_notifications" ios.position="right"></ActionItem>
+  <ActionItem ios.systemIcon="3" icon="res://ic_account" ios.position="right"></ActionItem>
+
+</ActionBar>
+
+  <StackLayout  style="background-color: gainsboro">
+      <Button class="add-button"  text="Ajouter Ordre Virement" (tap)="addOrdreVirement()" ></Button>
+
+      <GridLayout class="page page-content" tkMainContent  style="background-color: white">
+          <ListView [items]="ordreVirementArray">
+              <ng-template let-item="item" let-i="index">
+                  <StackLayout orientation="horizontal" class="list-item">
+                      <StackLayout orientation="vertical">
+                          <Label [text] = "item.titre" class="list-label"></Label>
+                          <StackLayout orientation="horizontal" class="list-cost" >
+                              <Label [text] = "item.nbrEmployer"></Label>
+                          </StackLayout>
+                      </StackLayout>
+                  </StackLayout>
+              </ng-template>
+          </ListView>
+      </GridLayout>
+  </StackLayout>
+  
